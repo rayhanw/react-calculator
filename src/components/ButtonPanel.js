@@ -14,7 +14,7 @@ class ButtonPanel extends Component {
 			<div>
         <div className="button-panel-alone">
           <Button value="C" numberValue={this.getNumberFromClick} />
-          <Button value="➗" numberValue={this.getNumberFromClick} />
+          <Button value="÷" numberValue={this.getNumberFromClick} />
         </div>
 				<div className="button-panel">
 					<Button value="7" numberValue={this.getNumberFromClick} />

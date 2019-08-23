@@ -9,3 +9,9 @@
   grid-template-columns: 224px auto;
   grid-gap: 8px;
 }
+
+@media only screen and (min-width: 992px) {
+  .button-panel-alone {
+    grid-template-columns: auto 305px;
+  }
+}
