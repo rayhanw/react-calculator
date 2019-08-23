@@ -3,3 +3,9 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 8px;
 }
+
+.button-panel-alone {
+  display: grid;
+  grid-template-columns: 224px auto;
+  grid-gap: 8px;
+}

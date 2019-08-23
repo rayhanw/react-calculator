@@ -7,14 +7,20 @@ class App extends React.Component {
   state = { number: null };
 
   getNumber = (number) => {
-    this.setState({ number })
+    if (number === "C") {
+      this.setState({ number: null })
+    } else {
+      this.setState({ number })
+    }
   }
 
   render() {
     return (
       <div>
         <Number number={this.state.number} />
-        <ButtonPanel onClick={this.getNumber} />
+        <div className="container">
+          <ButtonPanel onClick={this.getNumber} />
+        </div>
       </div>
     );
   }

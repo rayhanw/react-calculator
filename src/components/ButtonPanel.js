@@ -12,6 +12,10 @@ class ButtonPanel extends Component {
   render() {
     return (
 			<div>
+        <div className="button-panel-alone">
+          <Button value="C" numberValue={this.getNumberFromClick} />
+          <Button value="➗" numberValue={this.getNumberFromClick} />
+        </div>
 				<div className="button-panel">
 					<Button value="7" numberValue={this.getNumberFromClick} />
 					<Button value="8" numberValue={this.getNumberFromClick} />
