@@ -51,11 +51,17 @@ class App extends React.Component {
 	};
 
 	renderResult() {
-		if (this.state.result) {
-			return this.state.result.toFixed(2);
+    const { result, number } = this.state;
+
+    if (result) {
+      if (result.toFixed(2).toString().endsWith('.00')) {
+        return result;
+      } else {
+        return result.toFixed(2);
+      }
 		}
 
-		return this.state.number;
+		return number;
 	}
 
 	render() {
