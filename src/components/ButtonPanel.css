@@ -1,17 +1,23 @@
 .button-panel {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 8px;
 }
 
-.button-panel-alone {
+.button-panel-top {
   display: grid;
-  grid-template-columns: 224px auto;
+  grid-template-columns: 254.5px auto;
+  grid-gap: 8px;
+}
+
+.button-panel-bottom {
+  display: grid;
+  grid-template-columns: 167.5px 79.75px 79.75px;
   grid-gap: 8px;
 }
 
 @media only screen and (min-width: 992px) {
-  .button-panel-alone {
+  .button-panel-top {
     grid-template-columns: auto 305px;
   }
 }

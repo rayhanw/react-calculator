@@ -11,12 +11,8 @@ class App extends React.Component {
 		actualPreviousNumber: null
 	};
 
-	result() {
-		return this.state.result;
-	}
-
 	getNumber = number => {
-		const operators = ["÷", "="];
+		const operators = ["÷", 'x', '+', '-', '='];
 
 		if (number === "C") {
 			this.setState({
@@ -34,15 +30,23 @@ class App extends React.Component {
 		this.setState({ previousNumber: number });
 		if (!operators.includes(this.state.previousNumber)) {
 			this.setState({ actualPreviousNumber: this.state.previousNumber });
-		}
+    }
 
 		if (
 			this.state.number &&
 			this.state.number[this.state.number.length - 1] === "="
 		) {
 			const parsedNumber = parseInt(this.state.actualPreviousNumber);
-			const parsedNewNumber = parseInt(this.state.number);
-			this.setState({ result: parsedNewNumber / parsedNumber });
+      const parsedNewNumber = parseInt(this.state.number);
+      if (this.state.number.includes('÷')) {
+        this.setState({ result: parsedNewNumber / parsedNumber });
+      } else if (this.state.number.includes('x')) {
+        this.setState({ result: parsedNewNumber * parsedNumber });
+      } else if (this.state.number.includes('+')) {
+        this.setState({ result: parsedNewNumber + parsedNumber });
+      } else if (this.state.number.includes('-')) {
+        this.setState({ result: parsedNewNumber - parsedNumber });
+      }
 		}
 	};
 
