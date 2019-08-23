@@ -12,7 +12,7 @@ class App extends React.Component {
 	};
 
 	getNumber = number => {
-		const operators = ["÷", 'x', '+', '-', '='];
+		const operators = ["÷", "x", "+", "-", "="];
 
 		if (number === "C") {
 			this.setState({
@@ -30,35 +30,40 @@ class App extends React.Component {
 		this.setState({ previousNumber: number });
 		if (!operators.includes(this.state.previousNumber)) {
 			this.setState({ actualPreviousNumber: this.state.previousNumber });
-    }
+		}
 
 		if (
 			this.state.number &&
 			this.state.number[this.state.number.length - 1] === "="
 		) {
 			const parsedNumber = parseInt(this.state.actualPreviousNumber);
-      const parsedNewNumber = parseInt(this.state.number);
-      if (this.state.number.includes('÷')) {
-        this.setState({ result: parsedNewNumber / parsedNumber });
-      } else if (this.state.number.includes('x')) {
-        this.setState({ result: parsedNewNumber * parsedNumber });
-      } else if (this.state.number.includes('+')) {
-        this.setState({ result: parsedNewNumber + parsedNumber });
-      } else if (this.state.number.includes('-')) {
-        this.setState({ result: parsedNewNumber - parsedNumber });
-      }
+			const parsedNewNumber = parseInt(this.state.number);
+			if (this.state.number.includes("÷")) {
+				this.setState({ result: parsedNewNumber / parsedNumber });
+			} else if (this.state.number.includes("x")) {
+				this.setState({ result: parsedNewNumber * parsedNumber });
+			} else if (this.state.number.includes("+")) {
+				this.setState({ result: parsedNewNumber + parsedNumber });
+			} else if (this.state.number.includes("-")) {
+				this.setState({ result: parsedNewNumber - parsedNumber });
+			}
 		}
 	};
 
 	renderResult() {
-    const { result, number } = this.state;
+		const { result, number } = this.state;
 
-    if (result) {
-      if (result.toFixed(2).toString().endsWith('.00')) {
-        return result;
-      } else {
-        return result.toFixed(2);
-      }
+		if (result) {
+			if (
+				result
+					.toFixed(2)
+					.toString()
+					.endsWith(".00")
+			) {
+				return result;
+			} else {
+				return result.toFixed(2);
+			}
 		}
 
 		return number;
