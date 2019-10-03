@@ -38,13 +38,14 @@ class App extends React.Component {
 		) {
 			const parsedNumber = parseInt(this.state.actualPreviousNumber);
 			const parsedNewNumber = parseInt(this.state.number);
-			if (this.state.number.includes("÷")) {
+			const { number } = this.state;
+			if (number.includes("÷")) {
 				this.setState({ result: parsedNewNumber / parsedNumber });
-			} else if (this.state.number.includes("x")) {
+			} else if (number.includes("x")) {
 				this.setState({ result: parsedNewNumber * parsedNumber });
-			} else if (this.state.number.includes("+")) {
+			} else if (number.includes("+")) {
 				this.setState({ result: parsedNewNumber + parsedNumber });
-			} else if (this.state.number.includes("-")) {
+			} else if (number.includes("-")) {
 				this.setState({ result: parsedNewNumber - parsedNumber });
 			}
 		}

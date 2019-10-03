@@ -5,8 +5,8 @@ class Button extends Component {
 	state = { number: null };
 
 	handleClick = async e => {
-    await this.setState({ number: e.currentTarget.value });
-    await this.props.numberValue(this.state.number);
+		await this.setState({ number: e.currentTarget.value });
+		await this.props.numberValue(this.state.number);
 	};
 
 	render() {
@@ -21,6 +21,5 @@ class Button extends Component {
 		);
 	}
 }
-
 
 export default Button;
